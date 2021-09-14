@@ -8,6 +8,7 @@
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
 
