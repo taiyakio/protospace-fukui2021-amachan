@@ -3,7 +3,8 @@
     <% if user_signed_in? %>
         <div class="greeting">
           こんにちは
-          <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
+          <%= link_to current_user.nickname, root_path, class: :greeting__link%>
+          さん
         </div>
     <% end %>
     <div class="card__wrapper">
