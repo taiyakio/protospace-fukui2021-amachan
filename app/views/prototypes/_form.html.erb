@@ -1,0 +1,28 @@
+<%= form_with model: prototype, local: true do |f|%>
+<%# 部分テンプレートを呼び出し、インスタンスを渡して、エラー発生時にメッセージが表示されるようにしています %>
+  <%= render 'error_messages', model: f.object %>
+<%# // 部分テンプレートを呼び出し、インスタンスを渡して、エラー発生時にメッセージが表示されるようにしています %>
+  <div class="field">
+    <%= f.label :name, "プロトタイプの名称" %><br />
+    <%= f.text_field :name, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :catch_copy, "キャッチコピー" %><br />
+    <%= f.text_area :catch_copy, class: :form__text, id:"prototype_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :concept, "コンセプト" %><br />
+    <%= f.text_area :concept, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.file_field :image, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
