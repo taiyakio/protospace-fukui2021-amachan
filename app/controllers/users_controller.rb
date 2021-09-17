@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
-    @name = user.name
+    @nickname = user.nickname
     @profile = user.profile
     @affiliation =user.affiliation
     @director = user.director
-    @tweets = user.tweets
+    @prototypes = user.prototypes
   end
 end
