@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_index, except: [:index, :create]
-  before_action :set_tweet, only: [:show]
+  before_action :set_prototype, only: [:show]
+  before_action :move_to_index, except: [:index, :create, :show]
 
   def index
     @prototypes = Prototype.includes(:user)
@@ -32,7 +32,7 @@ class PrototypesController < ApplicationController
   end
 
   private
-  def set_tweet
+  def set_prototype
     @prototype = Prototype.find(params[:id])
   end
 
