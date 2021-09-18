@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_index, except: [:index, :create]
+  before_action :set_prototype, only: [:show]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @prototypes = Prototype.includes(:user)
@@ -31,6 +32,9 @@ class PrototypesController < ApplicationController
   end
 
   private
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
+  end
 
   def move_to_index
     unless user_signed_in?
