@@ -1,6 +1,11 @@
 ja:
   activerecord:
     attributes:
+      user:
+        nickname: ニックネーム
+        profile: プロフィール
+        affiliation: 所属
+        director: 役職
       prototype:
         name: プロトタイプの名称
         catch_copy: キャッチコピー
