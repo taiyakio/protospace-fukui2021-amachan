@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
       it 'nicknameが空では登録できない' do  
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Nicknameを入力してください")
+        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
       end
       it 'emailが空では登録できない' do
         @user.email = ''
@@ -35,17 +35,17 @@ RSpec.describe User, type: :model do
       it 'profileが空では登録できない' do  
         @user.profile = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Profileを入力してください")
+        expect(@user.errors.full_messages).to include("プロフィールを入力してください")
       end
       it 'affiliationが空では登録できない' do  
         @user.affiliation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Affiliationを入力してください")
+        expect(@user.errors.full_messages).to include("所属を入力してください")
       end
       it 'directorが空では登録できない' do  
         @user.director = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Directorを入力してください")
+        expect(@user.errors.full_messages).to include("役職を入力してください")
       end
       it 'passwordとpassword_confirmationが不一致では登録できない' do
         @user.password_confirmation = ''
