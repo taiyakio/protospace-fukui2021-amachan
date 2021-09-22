@@ -15,12 +15,12 @@ RSpec.describe Prototype, type: :model do
       it 'nameが空では登録できない' do
         @prototype.name = ''
         @prototype.valid?
-        expect(@prototype.errors.full_messages).to include("Name can't be blank")
+        expect(@prototype.errors.full_messages).to include("プロトタイプの名称を入力してください")
       end
       it 'catch_copyが空では登録できない' do
         @prototype.catch_copy = ''
         @prototype.valid?
-        expect(@prototype.errors.full_messages).to include("Catch copy can't be blank")
+        expect(@prototype.errors.full_messages).to include("キャッチコピーを入力してください")
       end
       it 'imageが空では登録できない' do
         @prototype.image = nil
@@ -30,7 +30,7 @@ RSpec.describe Prototype, type: :model do
       it 'userが紐付いていないと保存できない' do
         @prototype.user = nil
         @prototype.valid?
-        expect(@prototype.errors.full_messages).to include('User must exist')
+        expect(@prototype.errors.full_messages).to include('Userを入力してください')
       end
     end
   end
