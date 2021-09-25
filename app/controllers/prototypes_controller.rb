@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update]
-  before_action :matched_user, only: :edit
+  before_action :matched_user, only: [:edit, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
