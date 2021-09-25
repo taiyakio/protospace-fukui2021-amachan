@@ -2,9 +2,6 @@
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザーログイン</h2>
-        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
-        <%# 「ログイン機能へのパス」は、devise導入後にrails routesを実行してdevise/sessions#createへのパスを確認し、記載してください。 %>
-        <%# ログイン時のエラーメッセージ  %>
         <div class='login-flash-message'>
           <%= flash[:notice] %>
           <%= flash[:alert] %>
