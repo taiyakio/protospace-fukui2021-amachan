@@ -1,10 +1,10 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
-  before_action :matched_user, only: :edit
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
+  before_action :matched_user, only: [:edit, :destroy, :update]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @prototypes = Prototype.includes(:user)
+    @prototypes = Prototype.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -21,8 +21,7 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-      prototype = Prototype.find(params[:id])
-      prototype.destroy
+      @prototype.destroy
       redirect_to root_path
   end
 
@@ -49,7 +48,7 @@ class PrototypesController < ApplicationController
   end
 
   def matched_user
-    if user_signed_in? && current_user.id != @prototype.user_id
+    if current_user.id != @prototype.user_id
       redirect_to action: :index
     end
   end
